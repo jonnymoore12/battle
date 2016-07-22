@@ -25,8 +25,14 @@ class Battle < Sinatra::Base
   end
 
   get '/attack' do
-    @game.attack
+    #@game.attack
     erb(:attack)
+  end
+
+  post '/attack_type' do
+    $attack = params[:attack]
+    @game.attack($attack.to_s)
+    redirect '/attack'
   end
 
   post '/switch' do

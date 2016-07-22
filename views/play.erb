@@ -6,10 +6,16 @@
 <%= @game.player_2.name%> HP:<%= @game.player_2.hp%>
 </p>
 <%= @game.player_turn.name %>'s turn!
-<form action="/attack">
+<form action="/attack_type" method="post">
 <% if @game.player_turn == @game.player_1 %>
-  <input type="submit" value="Attack!"/>
+  <label for="attack"> Attack! </label>
+    <input type="radio" name="attack" value="Attack" />
+  <label for="attack"> Attack 2! </label>
+    <input type="radio" name="attack" value="Attack 2" />
+  <label for="attack"> Attack 3! </label>
+    <input type="radio" name="attack" value="Attack 3" />
+  <input type="submit" value="Continue"/>
 <% else %>
-  <input type="submit" value="Continue"/>	
+  <input type="submit" value="Continue"/>
 <% end %>
 </form>

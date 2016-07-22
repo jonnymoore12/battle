@@ -4,9 +4,11 @@ feature 'Play' do
 		expect(page).to have_content "Sam's turn!"
 	end
 
-	scenario "displays 'Attack!' button on player 1's turn" do
+	scenario "displays 3 'Attack!' buttons on player 1's turn" do
 		sign_in_and_play
-		expect(page).to have_button "Attack!"	
+		expect(page).to have_button "Attack!"
+		expect(page).to have_button "Attack 2!"
+		expect(page).to have_button "Attack 3!"
 	end
 
 	before do
@@ -20,6 +22,6 @@ feature 'Play' do
 	end
 
 	scenario "displays 'Continue' button on player 2's turn" do
-    expect(page).to have_button "Continue"	
+    expect(page).to have_button "Continue"
 	end
 end

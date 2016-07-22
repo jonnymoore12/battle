@@ -1,4 +1,5 @@
 require_relative "player.rb"
+require_relative "attack"
 
 class Game
 
@@ -23,8 +24,8 @@ class Game
     @players.last
   end
 
-  def attack
-    opponent_of(player_turn).receive_damage
+  def attack(attack_type = "attack_1")
+    Attack.new(player_turn, opponent_of(player_turn), attack_type).execute
   end
 
   def player_turn

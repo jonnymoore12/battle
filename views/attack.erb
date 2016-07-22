@@ -1,10 +1,11 @@
-<%=@game.player_turn.name %> annihilates <%=@game.opponent_of(@game.player_turn).name %>!
+<%=@game.player_turn.name %> smashes <%=@game.opponent_of(@game.player_turn).name %>
+ with <%=$attack %>!
 <p>
 
 <% if @game.opponent_of(@game.player_turn).hp > 0 %>
 <form action="/switch" method="post">
 <%else%>
-<form action="/game_over" method="get">  
+<form action="/game_over" method="get">
 <%end%>
   <input type="submit" value="Resume combat!"/>
 

@@ -6,9 +6,9 @@ feature 'Attack' do
   end
   scenario "attack reduces player 2's HP" do
     sign_in_and_play
-    allow(Kernel).to receive(:rand).and_return(20)
+    #allow(Kernel).to receive(:rand).and_return(20)
     click_button("Attack!")
     click_button("Resume combat!")
-    expect(page).to have_content "Jonny HP:80"
+    expect(page).to have_content "Jonny HP:90"
   end
 end
