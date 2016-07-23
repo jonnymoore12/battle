@@ -2,7 +2,7 @@ class Attack
 
   attr_reader :type
 
-  def initialize(attacker, opponent, attack_type)
+  def initialize(attacker, opponent = nil, attack_type = nil)
     @type = attack_type
     @attacker = attacker
     @opponent = opponent
@@ -10,7 +10,7 @@ class Attack
 
   def execute
     case type
-    when "Attack"
+    when "Attack 1"
       damage = attack_1
     when "Attack 2"
       damage = attack_2
@@ -20,7 +20,6 @@ class Attack
       damage = attack_2
     end
     @opponent.receive_damage(damage)
-
   end
 
   private

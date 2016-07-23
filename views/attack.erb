@@ -1,5 +1,5 @@
 <%=@game.player_turn.name %> smashes <%=@game.opponent_of(@game.player_turn).name %>
- with <%=$attack %>!
+ with <%=$attack_type %>!
 <p>
 
 <% if @game.opponent_of(@game.player_turn).hp > 0 %>

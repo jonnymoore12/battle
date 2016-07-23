@@ -6,15 +6,8 @@ feature 'Hit points' do
 
   scenario "when a player reaches 0hp, GAME OVER is confirmed" do
   	sign_in_and_play
-  	#allow(Kernel).to receive(:rand).and_return(100)
-    9.times do
-      click_button("Attack!")
-    	click_button("Resume combat!")
-      click_button("Continue")
-      click_button("Resume combat!")
-    end
-    click_button("Attack!")
-    click_button("Resume combat!")
+    choose("attack 3")
+    click_button("Continue")
   	expect(page).to have_content "JONNY LOSES! GAME OVER!!"
   end
 
