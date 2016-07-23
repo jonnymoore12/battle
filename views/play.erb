@@ -1,0 +1,23 @@
+<%= @game.player_1.name%> vs. <%= @game.player_2.name%>!
+<p>
+<%= @game.player_1.name%> HP:<%= @game.player_1.hp%>
+</p>
+<p>
+<%= @game.player_2.name%> HP:<%= @game.player_2.hp%>
+</p>
+<%= @game.player_turn.name %>'s turn!
+<form action="/attack_type" method="post">
+  <div class="field">
+    <% if @game.player_turn == @game.player_1 %>
+      <label for="attack"> Attack 1 </label>
+        <input type="radio" name="attack" value="Attack 1" />
+      <label for="attack"> Attack 2 </label>
+        <input type="radio" name="attack" value="Attack 2" />
+      <label for="attack"> Attack 3 </label>
+        <input type="radio" name="attack" value="Attack 3" />
+      <input type="submit" value="Continue"/>
+    <% else %>
+      <input type="submit" value="Continue"/>
+    <% end %>
+  </div>
+</form>
